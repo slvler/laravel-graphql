@@ -5,5 +5,14 @@ type Query {
 type User {
     id: ID,
     email: String,
-    name: String
+    name: String,
+    password: String
+}
+
+type Mutation {
+    createUser(name: String!, email: String!, password: String!): User! @create
+
+    updateUser(id: ID!, name: String!, email:String!): User! @update
+
+    deleteUser(id: ID!): User @delete
 }
